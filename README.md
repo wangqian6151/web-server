@@ -13,7 +13,7 @@ data文件夹保存用户数据
 
 
 以下是routes_todo.py中的路由分发函数：
-```
+```python
 def route_dict():
     """
     路由字典
@@ -31,7 +31,7 @@ def route_dict():
 ```
 
 request.py是处理浏览器发过来的request请求的文件，用一个Request类来解析请求行、请求首部、请求体。以下是其中的一部分代码：
-```
+```python
 class Request(object):
     def __init__(self, raw_data):
         # 只能 split 一次，因为 body 中可能有换行
@@ -55,7 +55,7 @@ class Request(object):
 ```
 
 server.py为服务启动文件，通过创建socket，然后bind绑定主机和端口，listen监听，accept接收浏览器发过来的数据，调用request.py的Request类解析出path路径，根据 path 调用routes文件夹中相应的处理函数，生成response响应，把响应通过connection.sendall发送给客户端。以下是其中的部分代码：
-```
+```python
 def response_for_path(request):
     """
     根据 path 调用相应的处理函数
