@@ -46,11 +46,11 @@ def run(host, port):
     """
     启动服务器
     """
-    # 初始化 socket 套路
+    # 初始化 socket 
     # 使用 with 可以保证程序中断的时候正确关闭 socket 释放占用的端口
     log('开始运行于', '{}:{}'.format(host, port))
     with socket.socket() as s:
-        # 使用 下面这句 可以保证程序重启后使用原有端口, 原因忽略
+        # 使用 下面这句 可以保证程序重启后使用原有端口
         s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         s.bind((host, port))
         s.listen(5)
@@ -68,5 +68,4 @@ if __name__ == '__main__':
         host='127.0.0.1',
         port=3000,
     )
-    # 如果不了解 **kwargs 的用法, 上过基础课的请复习函数, 新同学自行搜索
     run(**config)
