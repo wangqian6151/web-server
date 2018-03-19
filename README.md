@@ -1,7 +1,7 @@
 # Jinja2版本的socket web server
 ## 基于MVC架构，采用Python Socket包和HTTP协议实现了一个完整的Web Server
 
-models文件夹下为基于txt文件的ORM框架
+models文件夹下为ORM框架
 
 routes文件夹存放的是路由处理函数，用字典实现的路由分发
 
