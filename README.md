@@ -1,4 +1,4 @@
-# Jinja2版本的socket web server
+# 基于 Socket的 Web Server 框架
 ## 基于MVC架构，采用Python Socket包和HTTP协议实现了一个完整的Web Server
 
 models文件夹下为ORM框架
